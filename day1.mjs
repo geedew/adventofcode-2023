@@ -1,6 +1,6 @@
 import * as fs from 'fs/promises';
 
-const file = await fs.open('./input.txt', 'r');
+const file = await fs.open('./day1.txt', 'r');
 
 let total = 0;
 
@@ -12,8 +12,6 @@ for await (const line of file.readLines() ) {
     const digitsInLine = digitsInLineArray.join('');
     const firstDigit = digitsInLine[0];
     const lastDigit = digitsInLine[digitsInLine.length -1];
-
-    console.log(`${line} - ${digitsInLine} - ${firstDigit}${lastDigit}`)
     total += Number(`${firstDigit}${lastDigit}`)
 }
 
